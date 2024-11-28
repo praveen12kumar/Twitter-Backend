@@ -3,6 +3,8 @@ import  Tweet from "../models/tweet.model.js";
 
 class TweetRepository {
 
+    
+
     async create(data){    // data will be of type Tweet model
         try {
             let tweet =  await Tweet.create(data); 
@@ -13,7 +15,7 @@ class TweetRepository {
         }
     }
 
-    async getAllTweets(){
+    async getAll(){
         try {
             const tweets = await Tweet.find({});
             return tweets;
@@ -24,7 +26,7 @@ class TweetRepository {
     }
 
 
-    async getTweet(){
+    async find(id){
         try {
             const tweet = await Tweet.findById({id});
             return tweet;
