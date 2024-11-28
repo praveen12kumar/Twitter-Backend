@@ -1,7 +1,11 @@
 import Hashtag from "../models/hashtag.model.js";
+import CrudRepository from "./crudRepository.js";
 
-class HashtagRepository{
+class HashtagRepository extends CrudRepository{
     
+    constructor(){
+        super();
+    }
 
     async create(data){
         try {
@@ -24,16 +28,6 @@ class HashtagRepository{
         }
     }
 
-    async get(id){
-        try {
-            const hashtag = await Hashtag.findById(id);
-            return hashtag;
-        } catch (error) {
-            console.log("Error in getting Hashtag", error);
-            throw error;
-        }
-    }
-
     async findByName(titleList){
         try {
             const hashtag = await Hashtag.find({title:titleList});
@@ -44,15 +38,6 @@ class HashtagRepository{
         }
     }
 
-    async destroy(id){
-        try {
-            const hashtag = await Hashtag.findByIdAndDelete(id);
-            return hashtag;
-        } catch (error) {
-            console.log("Error in deleting Hashtag", error);
-            throw error;
-        }
-    }
 }
 
 export default HashtagRepository;
