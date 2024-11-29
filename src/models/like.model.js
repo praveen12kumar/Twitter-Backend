@@ -6,7 +6,7 @@ const likeShema = new Schema({
         required:true,
         enum:["Tweet","Comment"]  // that way it can be scalable
     },
-    likeableId:{
+    likeable:{                       // contains the id of the tweet or comment
         type:Schema.Types.ObjectId,
         required:true,
         refPath:"onModel"

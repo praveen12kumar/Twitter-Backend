@@ -4,7 +4,7 @@ import CrudRepository from "./crudRepository.js";
 class HashtagRepository extends CrudRepository{
     
     constructor(){
-        super();
+        super(Hashtag);
     }
 
     async create(data){
