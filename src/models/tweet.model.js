@@ -11,6 +11,10 @@ const tweetSchema = new Schema({
         type:Schema.Types.ObjectId,
         ref:"Like",
     }],
+    comments:[{
+        type:Schema.Types.ObjectId,
+        ref:"Comment"
+    }]
     
 },{
     timestamps:true,
